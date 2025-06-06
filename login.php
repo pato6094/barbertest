@@ -19,18 +19,25 @@
                 <p>Sign in to your admin account</p>
             </div>
             
+            <?php if (isset($_GET['error'])): ?>
+                <div class="error-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Credenziali errate. Riprova.
+                </div>
+            <?php endif; ?>
+            
             <form method="POST" action="login_check.php" class="login-form">
                 <div class="form-group">
                     <div class="input-wrapper">
                         <i class="fas fa-user"></i>
-                        <input type="text" name="username" placeholder="Username" required>
+                        <input type="text" name="username" placeholder="Username" required value="admin">
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <div class="input-wrapper">
                         <i class="fas fa-lock"></i>
-                        <input type="password" name="password" placeholder="Password" required>
+                        <input type="password" name="password" placeholder="Password" required value="admin123">
                     </div>
                 </div>
                 
@@ -50,7 +57,7 @@
             </form>
             
             <div class="login-footer">
-                <p>Don't have an account? <a href="#">Contact Administrator</a></p>
+                <p>Credenziali di test: admin / admin123</p>
             </div>
         </div>
         
@@ -60,6 +67,13 @@
             <div class="decoration-circle circle-3"></div>
         </div>
     </div>
+
+    <script>
+        // Add loading state to login button
+        document.querySelector('.login-form').addEventListener('submit', function() {
+            const btn = document.querySelector('.login-btn');
+            btn.classList.add('loading');
+        });
+    </script>
 </body>
 </html>
-```

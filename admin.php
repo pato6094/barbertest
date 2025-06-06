@@ -230,7 +230,7 @@ while ($row = $services_result->fetch_assoc()) {
                             </select>
                         </div>
                         <div class="chart-container">
-                            <canvas id="visitorsChart"></canvas>
+                            <p>Chart visualization coming soon...</p>
                         </div>
                     </div>
 
@@ -379,4 +379,3 @@ while ($row = $services_result->fetch_assoc()) {
     <script src="admin-script.js"></script>
 </body>
 </html>
-```
